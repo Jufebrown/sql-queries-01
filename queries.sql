@@ -26,10 +26,16 @@ LEFT JOIN Artist art ON s.ArtistId = art.ArtistId
 WHERE art.ArtistName = "Cancer Bats"
 
 --06 Write a SELECT statement to display how many songs exist for each album. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
-
+SELECT a.Title AS "Album", COUNT(s.Title) AS "Song Count"
+FROM Song s
+JOIN Album a ON s.AlbumId = a.AlbumId
+GROUP BY a.Title
 
 --07 Write a SELECT statement to display how many songs exist for each artist. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
-
+SELECT a.ArtistName AS "Artist Name", COUNT(s.Title) AS "Song Count"
+FROM Song s
+JOIN Artist a ON s.ArtistId = a.ArtistId
+GROUP BY a.ArtistName
 
 --08 Write a SELECT statement to display how many songs exist for each genre. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
 
