@@ -52,3 +52,6 @@ SELECT s.Title AS "Album", MAX(s.SongLength) AS "Song Length"
 FROM Song s
 
 --11 Modify the previous query to also display the title of the album.
+SELECT s.Title AS "Album", MAX(s.SongLength) AS "Song Length", a.Title AS "Album"
+FROM Song s
+JOIN Album a ON s.AlbumId = a.AlbumId
